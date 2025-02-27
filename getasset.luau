@@ -22,7 +22,7 @@ function getasset(asset)
         file = readfile(folder..asset)
     end
 
-    return getcustomasset(file)
+    return getcustomasset(folder..asset)
 end
 
 getgenv().getasset = getasset
