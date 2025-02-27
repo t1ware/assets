@@ -18,7 +18,7 @@ function getasset(asset)
 
     local file = isfile(folder..asset) and readfile(folder..asset) or false
     if not file then
-        writefile(folder..asset, game:HttpGet(repository..asset))
+        writefile(folder..asset, game:HttpGet(repository..asset.."?raw=true"))
         file = readfile(folder..asset)
     end
 
