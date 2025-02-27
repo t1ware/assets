@@ -16,10 +16,10 @@ function getasset(asset)
         folder = ".assets/"
     end
 
-    local file = isfile(folder..asset) and readfile(asset) or false
+    local file = isfile(folder..asset) and readfile(folder.asset) or false
     if not file then
         writefile(folder..asset, game:HttpGet(repository..asset))
-        file = readfile(asset)
+        file = readfile(folder.asset)
     end
 
     return getcustomasset(file)
